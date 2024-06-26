@@ -4,6 +4,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import WelcomePage from './components/WelcomePage';
 import RecipeSearchPage from './components/RecipeSearchPage';
+import RecipeDetailPage from './components/RecipeDetailPage';
+import AddRecipePage from './components/AddRecipePage';
 
 const theme = createTheme({
   palette: {
@@ -26,6 +28,8 @@ function App() {
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           <Route path="/recipes" element={<RecipeSearchPage />} />
+          <Route path="/recipes/:id" element={<RecipeDetailPage />} />
+          <Route path="/add" element={<AddRecipePage />} />
         </Routes>
     </ThemeProvider>
   );

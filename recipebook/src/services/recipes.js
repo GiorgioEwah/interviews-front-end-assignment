@@ -16,10 +16,10 @@ export const recipesApi = createApi({
       query: (recipeId) => `/comments?recipeId=${recipeId}`,
     }),
     addComment: builder.mutation({
-      query: (comment) => ({
+      query: (newComment) => ({
         url: '/comments',
         method: 'POST',
-        body: comment,
+        body: newComment,
       }),
     }),
     getCuisines: builder.query({
@@ -30,6 +30,13 @@ export const recipesApi = createApi({
     }),
     getDiets: builder.query({
       query: () => '/diets',
+    }),
+    addRecipe: builder.mutation({
+      query: (newRecipe) => ({
+        url: '/recipes',
+        method: 'POST',
+        body: newRecipe,
+      }),
     }),
   }),
 });
@@ -42,4 +49,5 @@ export const {
   useGetCuisinesQuery,
   useGetDifficultiesQuery,
   useGetDietsQuery,
+  useAddRecipeMutation,
 } = recipesApi;
