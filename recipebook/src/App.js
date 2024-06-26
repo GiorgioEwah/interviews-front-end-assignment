@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
-import WelcomePage from './components/WelcomePage'; // Import WelcomePage
+import WelcomePage from './components/WelcomePage';
+import RecipeSearchPage from './components/RecipeSearchPage';
 
 const theme = createTheme({
   palette: {
@@ -23,8 +24,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
         <Routes>
-          <Route path="/" element={<WelcomePage />} /> {/* Add WelcomePage route */}
-
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/recipes" element={<RecipeSearchPage />} />
         </Routes>
     </ThemeProvider>
   );
