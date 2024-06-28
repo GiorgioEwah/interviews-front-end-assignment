@@ -1,8 +1,15 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate(-1); // Navigate to the previous page
+  };
+
   return (
     <AppBar position="sticky">
       <Toolbar>
@@ -10,15 +17,26 @@ const Navbar = () => {
           RecipeBook
         </Typography>
         <Box>
-          <Button
-            component={Link}
-            to="/add"
-            variant="contained"
-            color="secondary"
-            sx={{ borderRadius: '20px' }}
-          >
-            Add Recipe
-          </Button>
+          {location.pathname === '/recipes' ? (
+            <Button
+              component={Link}
+              to="/add"
+              variant="contained"
+              color="secondary"
+              sx={{ borderRadius: '20px' }}
+            >
+              Add Recipe
+            </Button>
+          ) : (
+            <Button
+              onClick={handleBackClick}
+              variant="contained"
+              color="secondary"
+              sx={{ borderRadius: '20px' }}
+            >
+              Back
+            </Button>
+          )}
         </Box>
       </Toolbar>
     </AppBar>
