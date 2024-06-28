@@ -98,7 +98,16 @@ Develop a recipe details page where users can view the full recipe, including in
 comments. Enable users to add comments and rate the recipe, displaying the average rating and updating the list of
 comments.
 
-## How to run
+## How to run the first time
+
+1. Run a terminal app in the "server" folder
+2. Execute the command "npm i"
+3. Execute the command "npm start"
+4. Run a terminal app in the "recipebook" folder
+5. Execute the command "npm i"
+6. Execute the command "npm start"
+
+## How to run any other time
 
 1. Run a terminal app in the "server" folder
 2. Execute the command "npm start"
