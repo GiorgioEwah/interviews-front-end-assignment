@@ -100,4 +100,7 @@ comments.
 
 ## How to run
 
-...
+1. Run a terminal app in the "server" folder
+2. Execute the command "npm start"
+3. Run a terminal app in the "recipebook" folder
+4. Execute the command "npm start"
